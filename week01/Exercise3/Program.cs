@@ -6,7 +6,7 @@ class Program
     {
     // Use random generator and use 1-100.
     Random randomGenerator = new Random();
-    int number = randomGenerator.Next(1, 100);
+    int number = randomGenerator.Next(1, 101);
     
     // create guess integer and give it a value of 0.
     int guess = 0;
