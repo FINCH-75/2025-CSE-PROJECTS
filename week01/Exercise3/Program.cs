@@ -11,7 +11,7 @@ class Program
     // create guess integer and give it a value of 0.
     int guess = 0;
 
-// create a while loop that uses if and else statements to asks the user to give a number and will only finish when user guesses correctly.
+// create a while loop that uses if and else statements to asks the user to give a number and will only finish when user guesses correctly...
 while (guess != number)
 {
     Console.Write("What is your guess? ");
