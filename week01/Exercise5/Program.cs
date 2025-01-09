@@ -6,20 +6,20 @@ class Program
     {
 
     DisplayMessage();
-    DisplayPersonalMessage();
+    DisplayUserName();
     int sum = AddNumbers();
-    Console.WriteLine($"The sum is: {sum}");
+    Console.Write($"the sum is: {sum}");
      
 static void DisplayMessage()
 {
-    Console.WriteLine("Hello world!");
+    Console.WriteLine("Welcome to the Program.");
 }
 
-static void DisplayPersonalMessage()
+static void DisplayUserName()
 {
-    Console.WriteLine("What is your Username?");
-    string userName = Console.ReadLine();
-    Console.WriteLine($"Hello {userName}");
+    Console.Write("What is your name?");
+    string name = Console.ReadLine();
+    Console.WriteLine($"Hello {name}");
 }
 
 static int AddNumbers()
