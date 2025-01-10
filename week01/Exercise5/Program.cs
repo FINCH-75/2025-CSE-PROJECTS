@@ -6,39 +6,45 @@ class Program
     {
 
     DisplayMessage();
-    DisplayUserName();
-    int sum = AddNumbers();
-    Console.Write($"the sum is: {sum}");
+    string name = DisplayUserName();
+    int squared = AddNumbers();
+    DisplayFinal(name , squared);
+    
+    //Console.Write($"Your favorite number squared is: {squared}");
      
 static void DisplayMessage()
 {
     Console.WriteLine("Welcome to the Program.");
 }
 
-static void DisplayUserName()
+static string DisplayUserName()
 {
     Console.Write("What is your name?");
     string name = Console.ReadLine();
-    Console.WriteLine($"Hello {name}");
+   
+    return name;
 }
 
 static int AddNumbers()
 {
     
-    int num1=0;
-    int num2=0;
-    Console.WriteLine("give me a number?");
+    int favNum = 0;
+    
+    Console.WriteLine("What is your favorite number?");
     string n1 = Console.ReadLine();
-    num1 = int.Parse(n1);
-
-Console.WriteLine("give me another number?");
-    string n2 = Console.ReadLine();
-    num2 = int.Parse(n2);
-
-    int sum = num1 + num2;
-    return sum;
+    favNum = int.Parse(n1);
 
 
+// make users favorite number squared //
+    int squared = favNum*favNum;
+    return squared;
+
+
+}
+
+static void  DisplayFinal(string name, int squared)
+{
+Console.WriteLine($"{name} Your number squared is {squared}");
 
 }
 
