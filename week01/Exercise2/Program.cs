@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.SymbolStore;
 
 class Program
 {
@@ -11,6 +12,40 @@ class Program
         // convert string to integer.
         int gradeNum = int.Parse(Grade);
 
+
+        // stretch challeng getting symbol after grade
+        // divide and get remander of number (modulo)
+        int grade = gradeNum % 10;
+
+        // Convert to string
+        string sym = grade.ToString();
+
+       // Create if else statement to find whether you get a symbol or not (grade>60<92) get a + or _
+    if (gradeNum > 60 && gradeNum <= 92)
+    {
+        if (grade >= 7)
+        {
+            
+            sym = "+";
+        }
+
+        else if (grade <= 2)
+        {
+            
+            sym = "-";
+        }
+
+        else
+        {
+            sym = "";
+        }
+
+    }
+    else
+    {
+        sym = "";
+    }
+
         // create letter string to use for letter grade.
         string letter = "";
         
@@ -18,7 +53,7 @@ class Program
         if (gradeNum >= 90)
         {
             letter = "A";
-            
+
         }
 
         else if (gradeNum >= 80)
@@ -41,8 +76,9 @@ class Program
            letter = "F";
         }
 
+        
         // display the users letter grade.
-        Console.WriteLine($"You have an  {letter} in the class.");
+        Console.WriteLine($"You have an  {letter}{sym} in the class.");
 
 
         // create if and else statement to find if user passed the class. If less than or equal to 69 failure of class.
