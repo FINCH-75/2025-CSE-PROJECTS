@@ -1,60 +1,53 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
     static void Main(string[] args)
     {
 
+    // Call all functions in main function
     DisplayMessage();
     string name = DisplayUserName();
-    int squared = AddNumbers();
+    int squared = FavNumber();
     DisplayFinal(name , squared);
     
-    //Console.Write($"Your favorite number squared is: {squared}");
-     
+    
+// Create DisplayMessage function.
 static void DisplayMessage()
 {
     Console.WriteLine("Welcome to the Program.");
 }
 
+// Create DisplayUserName function and return name.
 static string DisplayUserName()
 {
-    Console.Write("What is your name?");
+    Console.Write("Please enter your name: ");
     string name = Console.ReadLine();
    
     return name;
 }
 
-static int AddNumbers()
-{
-    
+// Create FavNumber fuction.
+static int FavNumber()
+{ 
     int favNum = 0;
     
-    Console.WriteLine("What is your favorite number?");
+    Console.Write("Please enter your favorite number: ");
     string n1 = Console.ReadLine();
     favNum = int.Parse(n1);
 
-
-// make users favorite number squared //
+// Make users favNum squared and return squared.
     int squared = favNum*favNum;
     return squared;
-
-
 }
 
+
+// Create DisplayFinal function with name and squared 
 static void  DisplayFinal(string name, int squared)
 {
-Console.WriteLine($"{name} Your number squared is {squared}");
+    Console.WriteLine($"{name}, your number squared is {squared}");
 
-}
-
-
-//DisplayWelcome - Displays the message, "Welcome to the Program!"
-//PromptUserName - Asks for and returns the user's name (as a string)
-//PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
-//SquareNumber - Accepts an integer as a parameter and returns that number squared (as an integer)
-//DisplayResult
-
-        
+}    
     }
 }
