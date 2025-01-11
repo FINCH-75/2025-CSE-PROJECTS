@@ -10,7 +10,7 @@ class Program
     DisplayMessage();
     string name = DisplayUserName();
     int squared = FavNumber();
-    DisplayFinal(name , squared);
+    DisplayFinal(name ,squared);
     
     
 // Create DisplayMessage function.
