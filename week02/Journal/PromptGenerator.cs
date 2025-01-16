@@ -1,14 +1,9 @@
-using System.Diagnostics.Contracts;
-
-public class PromptGenerator
+public class PromptGenerator()
 {
-
-    public List<string>_prompts;
+    public List<string> _prompts;
 
     public string GetRandomPrompt()
     {
         return "";
     }
-
-
 }

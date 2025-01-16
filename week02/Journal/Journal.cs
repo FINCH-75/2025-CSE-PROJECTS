@@ -1,9 +1,8 @@
-public class Journal
+public class Journal()
 {
-    public List<Entry>_entries;
+    public List<Entry> _entries;
 
-
-    public void AddEnty(Entry newEntry)
+    public void AddEntry(Entry entry)
     {
 
     }
@@ -13,15 +12,13 @@ public class Journal
 
     }
 
-    public void SafeToFile(string file)
+    public void SaveToFile(string file)
     {
 
     }
 
-    public void LoadFile(string file)
+    public void LoadFromFile(string file)
     {
         
     }
-
-
 }

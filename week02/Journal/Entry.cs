@@ -1,15 +1,12 @@
-public class Entry
+public class Entry()
 {
-    public string _date;
-    public string _promptText;
-    public string _entryText;
+    string _date;
+    string _prompt;
+    string _entryText;
 
-
-    public void display()
+    public void Display()
     {
-
         
     }
-
 
 }
