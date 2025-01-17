@@ -1,4 +1,5 @@
 using System.Formats.Asn1;
+using System.Net.Http.Headers;
 
 public class Journal()
 {
@@ -44,5 +45,21 @@ public class Journal()
             Console.WriteLine($"{file} does not exist.");
             return ;
         }
+        _entries.Clear();
+
+        foreach (var line  in File.ReadAllLines(file))
+        {
+            var parts = line.Split('|');
+            if (parts.Length == 3)
+            {
+                Entry entry  = new Entry();
+                entry._date = parts[0];
+                entry._prompt = parts[1];
+                entry._entryText=parts[2];
+                _entries.Add(entry);
+            }
+
+        };
+        
     }
 }
