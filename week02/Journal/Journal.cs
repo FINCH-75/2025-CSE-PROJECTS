@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 public class Journal()
 {
-    public List<Entry> _entries;
+    public List<Entry> _entries = new List<Entry>();
 
     public void AddEntry(Entry entry)
     {
@@ -53,13 +53,18 @@ public class Journal()
             if (parts.Length == 3)
             {
                 Entry entry  = new Entry();
-                entry._date = parts[0];
-                entry._prompt = parts[1];
-                entry._entryText=parts[2];
+                {
+                   entry._date = parts[0];
+                   entry._prompt = parts[1];
+                   entry._entryText=parts[2]; 
+                }
                 _entries.Add(entry);
             }
+                
 
         };
+        Console.WriteLine("Journal loaded successfully!");
         
     }
+    
 }

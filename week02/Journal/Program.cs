@@ -7,24 +7,79 @@ class Program
     {
         Console.WriteLine("Hello journal world");
 
-        
+        Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
-        string randomPrompt = promptGenerator.GetRandomPrompt();
-
-         Console.WriteLine($"Prompt: {randomPrompt}");
-        Console.Write("Your Entry: ");
-        string UserEntry = Console.ReadLine();
         
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
+        while (true)
+        {
+            Console.WriteLine("Journal Menu");
+            Console.WriteLine("1. Write a new entry");
+            Console.WriteLine("2. Display Journal");
+            Console.WriteLine("3. Save to a file");
+            Console.WriteLine("4. Load from a file.");
+            Console.WriteLine("5. Quit");
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                string prompt = promptGenerator.GetRandomPrompt();
+                    Console.WriteLine($"Prompt: {prompt}");
+                    Console.Write("Your response: ");
+                    string response = Console.ReadLine();
+
+                    Entry entry = new Entry
+                    {
+                        _date = DateTime.Now.ToShortDateString(),
+                        _prompt = prompt,
+                        _entryText = response
+                    };
+
+                    journal.AddEntry(entry);
+                    Console.WriteLine("Entry added successfully!");
+                    
+            }
+
+            else if (choice == "2")
+            {
+                    Console.WriteLine("\nAll Journal Entries:");
+                    journal.DisplayAll();
+                    
+            }
+
+            else if (choice == "3")
+            {
+                    Console.Write("Enter file name to save: ");
+                    string saveFile = Console.ReadLine();
+                    journal.SaveToFile(saveFile);
+                    Console.WriteLine("Entries saved successfully!");
+                    
+            }
+
+            else if (choice == "4")
+            {
+                    Console.Write("Enter file name to load: ");
+                    string loadFile = Console.ReadLine();
+                    journal.LoadFromFile(loadFile);
+                    Console.WriteLine("Entries loaded successfully!");
+                    
+            }
+
+            else if(choice == "5")
+            {
+                Console.WriteLine("Good Bye!");
+                break;
+            }
+
+            else
+            {
+                Console.WriteLine("Please enter a number between 1 and 5");
+            }
 
 
-        Entry entry1 = new Entry();
-        entry1._date = dateText;
-        entry1._prompt = randomPrompt;
-        entry1._entryText = UserEntry;
 
-        entry1.Display();
+        }
+
+        
         
     }
 
