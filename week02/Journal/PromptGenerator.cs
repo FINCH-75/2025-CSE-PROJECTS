@@ -8,6 +8,8 @@ public class PromptGenerator()
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "If I had one thing I could do over today, what would it be?",
+        "What did I do today to bring me closer to Christ?", 
+        "What did I do today to strenghthen my marraige?",
 
     };
 

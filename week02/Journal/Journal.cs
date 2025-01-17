@@ -1,5 +1,3 @@
-using System.Formats.Asn1;
-using System.Net.Http.Headers;
 
 public class Journal()
 {
@@ -27,7 +25,7 @@ public class Journal()
 
     public void SaveToFile(string file)
     {
-        using (StreamWriter sw = new StreamWriter(file))
+        using (StreamWriter sw = new StreamWriter(file, true))
         {
             foreach (var entry in _entries)
             {
@@ -35,7 +33,7 @@ public class Journal()
             }
             
         }
-        Console.WriteLine("Journal saved successfully!");
+        Console.WriteLine("\nJournal saved successfully!");
     }
 
     public void LoadFromFile(string file)
@@ -63,7 +61,7 @@ public class Journal()
                 
 
         };
-        Console.WriteLine("Journal loaded successfully!");
+        Console.WriteLine("\nJournal loaded successfully!");
         
     }
     
