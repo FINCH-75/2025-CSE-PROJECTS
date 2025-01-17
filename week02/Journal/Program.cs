@@ -7,6 +7,7 @@ class Program
     {
         Console.WriteLine("Welcome to your C# journal");
         Console.WriteLine("Please enter a number between 1 and 5.");
+        Console.WriteLine("\n What would you like to select?");
 
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
@@ -16,8 +17,8 @@ class Program
             Console.WriteLine("\nJournal Menu");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display Journal");
-            Console.WriteLine("3. Save to a file");
-            Console.WriteLine("4. Load from a file.");
+            Console.WriteLine("3. Save to a journal file");
+            Console.WriteLine("4. Load from a journal file.");
             Console.WriteLine("5. Quit");
             Console.Write("\n>");
             string choice = Console.ReadLine();
@@ -50,7 +51,7 @@ class Program
 
             else if (choice == "3")
             {
-                    Console.Write("Enter file name to save: ");
+                    Console.Write("Enter journal file name to save: ");
                     string saveFile = Console.ReadLine();
                     journal.SaveToFile(saveFile);
                     
@@ -59,7 +60,7 @@ class Program
 
             else if (choice == "4")
             {
-                    Console.Write("Enter file name to load: ");
+                    Console.Write("Enter journal file name to load: ");
                     string loadFile = Console.ReadLine();
                     journal.LoadFromFile(loadFile);
                     
