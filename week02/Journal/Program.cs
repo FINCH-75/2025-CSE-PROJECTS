@@ -7,7 +7,7 @@ class Program
     {
         Console.WriteLine("Hello journal world");
 
-
+        
         PromptGenerator promptGenerator = new PromptGenerator();
         string randomPrompt = promptGenerator.GetRandomPrompt();
 
