@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-
+    // created the class PromptGenerator
 public class PromptGenerator()
 {
+    // Created a list of prompts to display for the user and stored them in a list of strings called _prompts.
     public List<string> _prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
@@ -14,7 +15,7 @@ public class PromptGenerator()
     };
 
 
-
+    // created a method to call a random method
     public string GetRandomPrompt() 
     {
        Random random = new Random();
